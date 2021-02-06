@@ -44,7 +44,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: latest # The branch the action should deploy to.
           FOLDER: out # The folder the action should deploy.
-      - name: Slack alert    
+      
       - uses: act10ns/slack@v1
         with:
           status: ${{ job.status }}
