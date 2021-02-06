@@ -17,4 +17,5 @@ jobs:
         SLACK_MESSAGE: 'PR opened :rocket:'
         SLACK_TITLE: Post Title
         SLACK_USERNAME: PR-BOT
+        SLACK_FOOTER: Powered by PR-BOT
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
