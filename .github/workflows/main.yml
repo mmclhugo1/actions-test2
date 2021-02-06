@@ -23,6 +23,7 @@ jobs:
       - name: Git checkout
         uses: actions/checkout@v2
       - name: Build HTML5 + Bootstrap
+        id: DITA-build
         uses: jason-fox/dita-build-action@master
         with:
           install: |
@@ -33,11 +34,13 @@ jobs:
             dita install https://github.com/mmclhugo1/DITA-plugins/archive/main.zip
           build: dita -i garage.ditamap -o out -f html5-bootstrap -v
       - name: Upload DITA
+        id: upload
         uses: actions/upload-artifact@v2
         with:
           name: dita-artifact
           path: 'out'
       - name: Deploy 🚀
+        id: deploy
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
