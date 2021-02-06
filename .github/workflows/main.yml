@@ -29,9 +29,7 @@ jobs:
             nodejs -v
             apt-get install -y apt-utils
             dita install https://github.com/mmclhugo1/DITA-plugins/archive/main.zip
-          input: garage.ditamap
-          transtype: html5-bootstrap
-          output-path: out
+          build: dita -i garage.ditamap -o out -f html5-bootstrap -v
       - name: Upload DITA
         uses: actions/upload-artifact@v2
         with:
